@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="public/js/jquery.js"></script>
+        <script src="public/js/angular.js"></script>
+        <script src="public/js/angular-route.js"></script>
+        <script src="public/js/angular-mocks.js"></script>
+
+        <script src="assets/js/script.js"></script>
+    </head>
+    <body ng-app="Weather" ng-controller="weatherController">
+        <header>
+            <breadcrumbs></breadcrumbs>
+        </header>
+  	    <div class="container">
+            <nav class="hidden">
+                <p id="menu">Menu</p>
+                <ul class="menu">
+                    <li ng-repeat="item in menu" class="route" ng-click="activeMenu($index)"><a href="{{item.hash}}" id="{{item.id}}">{{item.menuItem}}</a></li>
+                </ul>
+            </nav>
+            <div class="main full-width">
+                <ul class="hamburger">
+                    <li id="metaMenu">
+                        <a href="/#/" ng-click="toggleNav()"><img src="assets/images/hamburger.jpg"></a>
+                    </li>
+                    <li id="current">
+                        {{curr}}
+                    </li>
+                </ul>
+                <div class="content">
+                    <div ng-view class="template"></div>
+                </div> 
+                <footer>
+                    <p>&#169; 2014 Adobe Systems Incorporated. All Rights Reserved</p>
+                </footer>  
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<div class="form-wrapper">
+	<h1>Enter City/State</h1>
+	<form ng-submit="submitForm(params)">
+		<div class="form-group">
+		  	<label>City:</label><input type="text" name="city" ng-model="params.city"/>
+		</div>
+		<div class="form-group">
+		  	<label>State:</label><input type="text" name="state" ng-model="params.state"/>
+		</div>
+		<input type="submit" id="button" value="Go" ng-hide="loading"/>
+    	<div class="spinner" ng-show="loading"></div>
+    	<p class="error hidden">Something went wrong. Please try again.</p>
+	</form>
+
+	<div class="results hidden">
+      	<h2>Results</h1>
+      	<p>Current Weather: {{params.city}}, {{params.state}} {{currentWeather}}</p>
+      	<p>Last Reading: {{lastReading | date: 'MM/dd/yyyy HH:mm:ss'}}</p>
+      	<p>Temperature: {{temp}}&#8457;</p>
+      	<p>Humidity: {{humidity}}%</p>
+      	<p>Sunrise: {{sunrise}}</p>
+      	<p>Sunset: {{sunset}}</p>
+    </div>
+</div>

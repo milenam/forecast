@@ -1,0 +1,301 @@
+/* palette */
+
+$darkgrey: #232323;
+$grey: #4d4d4d;
+$lightgrey: #b4b4b4;
+$white: #ffffff;
+$red: #FF0000;
+
+@mixin s-col {
+	width: 25%;
+}
+
+@mixin m-col {
+	width: 35%;
+}
+
+@mixin l-col {
+	width: 75%;
+}
+
+@mixin xl-col {
+	width: 100%;
+}
+
+@mixin fontsize-xl {
+  font-size: 33px;
+}
+
+@mixin fontsize-l {
+  font-size: 22px;
+}
+
+@mixin fontsize-m {
+  font-size: 18px;
+}
+
+@mixin fontsize-s {
+  font-size: 14px;
+}
+
+@mixin display($value) {
+  	@if $value == "flex" {
+	    display: -webkit-flex;
+	    display: -moz-flex;
+	    display: -ms-flexbox;
+	    display: flex;
+  	} @else if $value == "inline-flex" {
+
+	    display: -webkit-inline-flex;
+	    display: -moz-inline-flex;
+	    display: -ms-inline-flexbox;
+	    display: inline-flex;
+  	} @else {
+    	display: $value;
+  	}
+}
+
+@mixin flex($value) {
+	-webkit-flex: #{$value};
+	-moz-flex: #{$value};
+	-ms-flex: #{$value};
+	-webkit-flex: #{$value};
+	flex: #{$value};
+}
+
+@mixin align-items($value) {
+	-webkit-box-align: #{$value};
+	-moz-box-align: #{$value};
+    -ms-flex-align: #{$value};
+	-webkit-align-items: #{$value};
+	align-items: #{$value};
+}
+
+@mixin align-self($value) {
+    -webkit-align-self: #{$value};
+    -moz-align-self: #{$value};
+    align-self: #{$value};
+}
+
+@mixin justify-content($value) {
+    -webkit-justify-content: #{$value};
+    -moz-justify-content: #{$value};
+    justify-content: #{$value};
+}
+
+@mixin flex-flow($value) {
+    -webkit-flex-flow: #{$value};
+    -moz-flex-flow: #{$value};
+    flex-flow: #{$value};
+}
+
+@mixin center-flex {
+	@include display(flex);
+    @include align-items(center);
+}
+
+* {
+    box-sizing: border-box; }
+
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+    margin: 0px;
+    font-family: Arial, sans-serif; 
+    @include fontsize-m;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+
+	li {
+		@include fontsize-m;
+	}
+}
+
+.hidden {
+	display: none !important;
+}
+
+.display {
+	display: block !important;
+}
+
+header {
+	background-color: $darkgrey;
+
+  .breadcrumb {
+		overflow: hidden;
+		padding: 18px;
+
+		li {
+			color: $grey;
+			display: inline;
+			&:after { 
+				content: "/"; 
+				padding: 0px 6px; 
+			}; 
+
+			&:first-child:before { 
+				content: ""; 
+				padding-right: 0; 
+			}
+
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+
+.container, .content, .template {
+	height: 100%;
+}
+
+.container {
+
+	nav {
+		position: absolute;
+	    @include s-col;
+	    color: $white;
+	    background-color: $grey;
+	    height: 100%;
+	    left: -25%;
+    
+    	#menu, .menu li {
+        	margin: 0px;
+        	padding: 18px;
+    	}
+
+    	.menu {
+			.route {
+		  		background-color: $darkgrey;
+
+		  		a {
+		  		color: $white;
+		  		}
+		  	}
+        }
+	}
+
+	.main {
+		height: 100%;
+		float: right;
+		@include l-col;
+		overflow: hidden;
+    
+    	.hamburger {
+    		background-color: $darkgrey;
+      		padding: 18px;
+      		@include center-flex;
+
+  			#metaMenu {
+  				line-height: 0px;
+
+  				a {
+  					display: block;
+  				}
+  			}
+
+  			#current {
+    			color: $white;
+    			margin-left: 16px;
+ 		    }
+		}
+
+		.content {
+
+			.welcome-wrapper {
+				height: 100%;
+        		@include center-flex;
+		    
+
+		    		h1 {
+		    			margin: -150px 0px 0px 22px;
+		    		}
+				}
+
+			.form-wrapper {
+
+				h1 {
+					margin: 18px;
+				}
+
+				form {
+					@include m-col;
+          
+          			.form-group {
+            			margin: 18px;
+            			@include display(flex);
+		        		@include justify-content(space-between);
+
+						input {
+							width: 80%;
+							height: 25px;
+						}
+					}
+
+					#button {
+						float: right;
+						margin: 0px 18px;
+						height: 25px;
+					}
+				}
+
+				.spinner {
+					background-image: url("../images/loading.gif");
+					height: 32px;
+					width: 32px;
+					display: block;
+					margin: 0 auto;
+					clear: both;
+				}
+
+				.error {
+					color: $red;
+					@include fontsize-s;
+					text-align: center;
+					clear: both;
+				}
+			}
+
+			.results {
+			   margin: 80px 0px 0px 18px;
+
+        		p {
+        			margin: 5px 0px;
+        		}
+			}
+		}
+
+		footer {
+			position:fixed;
+			bottom: 0px;
+			width: 100%;
+			@include display(flex);
+      		@include align-items(center);
+      		@include justify-content(space-around);
+      		border-top: 1px solid $lightgrey;
+
+			p {
+				float: right;
+				padding: 12px;
+				color: $lightgrey;
+				@include fontsize-s;
+			}
+		}
+	}
+
+	.full-width {
+		@include xl-col;
+	}
+}

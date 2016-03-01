@@ -1,0 +1,162 @@
+/* palette */
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  font-size: 18px; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+  ul li {
+    font-size: 18px; }
+
+.hidden {
+  display: none !important; }
+
+.display {
+  display: block !important; }
+
+header {
+  background-color: #232323; }
+  header .breadcrumb {
+    overflow: hidden;
+    padding: 18px; }
+    header .breadcrumb li {
+      color: #4d4d4d;
+      display: inline; }
+      header .breadcrumb li:after {
+        content: "/";
+        padding: 0px 6px; }
+      header .breadcrumb li:first-child:before {
+        content: "";
+        padding-right: 0; }
+      header .breadcrumb li a {
+        color: #ffffff; }
+
+.container, .content, .template {
+  height: 100%; }
+
+.container nav {
+  position: absolute;
+  width: 25%;
+  color: #ffffff;
+  background-color: #4d4d4d;
+  height: 100%;
+  left: -25%; }
+  .container nav #menu, .container nav .menu li {
+    margin: 0px;
+    padding: 18px; }
+  .container nav .menu .route {
+    background-color: #232323; }
+    .container nav .menu .route a {
+      color: #ffffff; }
+
+.container .main {
+  height: 100%;
+  float: right;
+  width: 75%;
+  overflow: hidden; }
+  .container .main .hamburger {
+    background-color: #232323;
+    padding: 18px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .container .main .hamburger #metaMenu {
+      line-height: 0px; }
+      .container .main .hamburger #metaMenu a {
+        display: block; }
+    .container .main .hamburger #current {
+      color: #ffffff;
+      margin-left: 16px; }
+  .container .main .content .welcome-wrapper {
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .container .main .content .welcome-wrapper h1 {
+      margin: -150px 0px 0px 22px; }
+  .container .main .content .form-wrapper h1 {
+    margin: 18px; }
+  .container .main .content .form-wrapper form {
+    width: 35%; }
+    .container .main .content .form-wrapper form .form-group {
+      margin: 18px;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      justify-content: space-between; }
+      .container .main .content .form-wrapper form .form-group input {
+        width: 80%;
+        height: 25px; }
+    .container .main .content .form-wrapper form #button {
+      float: right;
+      margin: 0px 18px;
+      height: 25px; }
+  .container .main .content .form-wrapper .spinner {
+    background-image: url("../images/loading.gif");
+    height: 32px;
+    width: 32px;
+    display: block;
+    margin: 0 auto;
+    clear: both; }
+  .container .main .content .form-wrapper .error {
+    color: #FF0000;
+    font-size: 14px;
+    text-align: center;
+    clear: both; }
+  .container .main .content .results {
+    margin: 80px 0px 0px 18px; }
+    .container .main .content .results p {
+      margin: 5px 0px; }
+  .container .main footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    justify-content: space-around;
+    border-top: 1px solid #b4b4b4; }
+    .container .main footer p {
+      float: right;
+      padding: 12px;
+      color: #b4b4b4;
+      font-size: 14px; }
+
+.container .full-width {
+  width: 100%; }
